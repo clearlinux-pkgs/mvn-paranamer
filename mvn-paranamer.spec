@@ -4,11 +4,13 @@
 #
 Name     : mvn-paranamer
 Version  : 2.8
-Release  : 1
+Release  : 2
 URL      : https://github.com/paul-hammant/paranamer/archive/paranamer-parent-2.8.tar.gz
 Source0  : https://github.com/paul-hammant/paranamer/archive/paranamer-parent-2.8.tar.gz
-Source1  : https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar
-Source2  : https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom
+Source1  : https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar
+Source2  : https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.pom
+Source3  : https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar
+Source4  : https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -31,11 +33,17 @@ data components for the mvn-paranamer package.
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8
 
 
 %files
@@ -43,5 +51,7 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/thoughtworks/parana
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar
+/usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.pom
 /usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar
 /usr/share/java/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom
